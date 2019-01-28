@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17DF7267BEEC80F041BC2514 /* libPods-ZAMathEditor.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 240FB07BA6FEA747B5822CCD /* libPods-ZAMathEditor.a */; };
 		771360D221F3290500C2FD0E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 771360D121F3290500C2FD0E /* AppDelegate.m */; };
 		771360D521F3290500C2FD0E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 771360D421F3290500C2FD0E /* ViewController.m */; };
 		771360D821F3290500C2FD0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 771360D621F3290500C2FD0E /* Main.storyboard */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		033B838C106371DD55C521DD /* Pods-ZAMathEditor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZAMathEditor.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZAMathEditor/Pods-ZAMathEditor.release.xcconfig"; sourceTree = "<group>"; };
+		1FBB35FD3C54A5465C145E66 /* Pods-ZAMathEditor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZAMathEditor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZAMathEditor/Pods-ZAMathEditor.debug.xcconfig"; sourceTree = "<group>"; };
+		240FB07BA6FEA747B5822CCD /* libPods-ZAMathEditor.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZAMathEditor.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		771360CD21F3290500C2FD0E /* ZAMathEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZAMathEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		771360D021F3290500C2FD0E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		771360D121F3290500C2FD0E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +37,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17DF7267BEEC80F041BC2514 /* libPods-ZAMathEditor.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13CE2E55DDE2FB02C2F55B15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				240FB07BA6FEA747B5822CCD /* libPods-ZAMathEditor.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		771360C421F3290500C2FD0E = {
 			isa = PBXGroup;
 			children = (
 				771360CF21F3290500C2FD0E /* ZAMathEditor */,
 				771360CE21F3290500C2FD0E /* Products */,
+				F2D2DA60B21BD7FD07DD6DC2 /* Pods */,
+				13CE2E55DDE2FB02C2F55B15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,8 +90,25 @@
 		771360E621F3294A00C2FD0E /* ZAMathEditor */ = {
 			isa = PBXGroup;
 			children = (
+				771360E921F436C200C2FD0E /* Model */,
 			);
 			path = ZAMathEditor;
+			sourceTree = "<group>";
+		};
+		771360E921F436C200C2FD0E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2D2DA60B21BD7FD07DD6DC2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FBB35FD3C54A5465C145E66 /* Pods-ZAMathEditor.debug.xcconfig */,
+				033B838C106371DD55C521DD /* Pods-ZAMathEditor.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 771360E321F3290600C2FD0E /* Build configuration list for PBXNativeTarget "ZAMathEditor" */;
 			buildPhases = (
+				24DAF4C9E5ABDB409ADFB56E /* [CP] Check Pods Manifest.lock */,
 				771360C921F3290500C2FD0E /* Sources */,
 				771360CA21F3290500C2FD0E /* Frameworks */,
 				771360CB21F3290500C2FD0E /* Resources */,
+				BBCF962E44C4E51F88D86986 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -143,6 +177,55 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		24DAF4C9E5ABDB409ADFB56E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZAMathEditor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BBCF962E44C4E51F88D86986 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ZAMathEditor/Pods-ZAMathEditor-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/MathEditor/MTKeyboardResources.bundle",
+				"${PODS_CONFIGURATION_BUILD_DIR}/iosMath/mathFonts.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MTKeyboardResources.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mathFonts.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ZAMathEditor/Pods-ZAMathEditor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		771360C921F3290500C2FD0E /* Sources */ = {
@@ -291,6 +374,7 @@
 		};
 		771360E421F3290600C2FD0E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FBB35FD3C54A5465C145E66 /* Pods-ZAMathEditor.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -308,6 +392,7 @@
 		};
 		771360E521F3290600C2FD0E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 033B838C106371DD55C521DD /* Pods-ZAMathEditor.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
