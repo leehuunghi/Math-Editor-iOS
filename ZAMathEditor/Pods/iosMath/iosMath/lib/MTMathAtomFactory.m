@@ -82,7 +82,11 @@ NSString *const MTSymbolDegree = @"\u00B0"; // \circ
     if (ch < 0x21 || ch > 0x7E) {
         // skip non ascii characters and spaces
         return nil;
-    } else if (ch == '$' || ch == '%' || ch == '#' || ch == '&' || ch == '~' || ch == '\'') {
+    }
+//    if (ch == '\n') {
+//        return [MTMathAtom atomWithType:kMTMathAtomSpace value:chStr];
+//    }
+    else if (ch == '$' || ch == '%' || ch == '#' || ch == '&' || ch == '~' || ch == '\'') {
         // These are latex control characters that have special meanings. We don't support them.
         return nil;
     } else if (ch == '^' || ch == '_' || ch == '{' || ch == '}' || ch == '\\') {

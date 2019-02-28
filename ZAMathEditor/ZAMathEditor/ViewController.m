@@ -16,6 +16,7 @@
 @property (nonatomic) NSLayoutConstraint *widthLabel;
 @property (nonatomic) NSLayoutConstraint *leftLabel;
 @property (nonatomic) NSLayoutConstraint *topLabel;
+@property (nonatomic) UILabel *placeHolder;
 @end
 
 @implementation ViewController
@@ -41,8 +42,19 @@
 
     [_label enableTap:YES];
     [_label enablePan:YES];
-    [_label enablePinch:NO];
+    [_label enablePinch:YES];
 
+    
+    _placeHolder =  [[UILabel alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2)];
+    
+    [_placeHolder setText:@"Tap to begin"];
+    [self.label addSubview:self.placeHolder];
+    _placeHolder.textAlignment = NSTextAlignmentCenter;
+    [_placeHolder setTranslatesAutoresizingMaskIntoConstraints:NO];
+    [[self.placeHolder.centerXAnchor constraintEqualToAnchor:self.label.centerXAnchor] setActive:YES];
+    [[self.placeHolder.centerYAnchor constraintEqualToAnchor:self.label.centerYAnchor] setActive:YES];
+    [[self.placeHolder.widthAnchor constraintEqualToAnchor:self.label.widthAnchor multiplier:0.5] setActive:YES];
+    [[self.placeHolder.heightAnchor constraintEqualToAnchor:self.label.heightAnchor multiplier:0.5] setActive:YES];
 }
 
 
@@ -59,34 +71,33 @@
     
     //increase height
     if (mathSize.height > self.heightLabel.constant - 10) {
-        [label layoutIfNeeded];
         // animate
         [UIView animateWithDuration:0.5 animations:^{
             self.heightLabel.constant = mathSize.height + 10;
-            [label layoutIfNeeded];
+//            [label layoutIfNeeded];
         }];
     }
 
-    //increase width
+//    increase width
     if (mathSize.width > self.widthLabel.constant - 10) {
-        [label layoutIfNeeded];
         // animate
         [UIView animateWithDuration:0.5 animations:^{
             self.widthLabel.constant = mathSize.width + 10;
-            [label layoutIfNeeded];
+//            [label layoutIfNeeded];
         }];
     }
-    
-    [UIView animateWithDuration:0.5 animations:^{
-        self.leftLabel.constant = ((float)UIScreen.mainScreen.bounds.size.width /2 - (label.caretPoint.x - self.label.frame.origin.x))/2;
-        self.topLabel.constant = ((float)UIScreen.mainScreen.bounds.size.height /4 - (label.caretPoint.y - self.label.frame.origin.y))/2;
-        [label layoutIfNeeded];
-    }];
+    [label layoutIfNeeded];
+//    //transition center label with caretView is center
+//    [UIView animateWithDuration:0.5 animations:^{
+//        self.leftLabel.constant = ((float)UIScreen.mainScreen.bounds.size.width /2 - (label.caretPoint.x - self.label.frame.origin.x))/2;
+//        self.topLabel.constant = ((float)UIScreen.mainScreen.bounds.size.height /4 - (label.caretPoint.y - self.label.frame.origin.y))/2;
+////        [label layoutIfNeeded];
+//    }];
     
 }
 
 - (void) didBeginEditing:(MTEditableMathLabel*) label {
-    
+    self.placeHolder.hidden = YES;
 }
 - (void) didEndEditing:(MTEditableMathLabel*) label {
     

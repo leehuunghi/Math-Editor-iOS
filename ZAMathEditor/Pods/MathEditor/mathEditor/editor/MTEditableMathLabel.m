@@ -272,8 +272,11 @@
 - (void)pan:(UIPanGestureRecognizer *)panGesture {
     NSLog(@"Pan!!!");
     CGPoint translation = [panGesture translationInView:self];
-    self.center = CGPointMake(self.center.x + translation.x * self.scale, self.center.y + translation.y * self.scale);
-    [panGesture setTranslation:CGPointZero inView:self];
+//    self.center = CGPointMake(self.center.x + translation.x * self.scale, self.center.y + translation.y * self.scale);
+    if (self.mathDisplaySize.height < self.center.y * 2 + translation.y * self.scale) {
+        self.center = CGPointMake(self.center.x + translation.x, self.center.y + translation.y * self.scale);
+        [panGesture setTranslation:CGPointZero inView:self];
+    }
 }
 
 - (void)pinch:(UIPinchGestureRecognizer *)pinchGesture {
@@ -503,6 +506,8 @@ static const unichar kMTUnicodeGreekCapitalEnd = 0x03A9;
     } else if (ch >= kMTUnicodeGreekCapitalStart && ch <= kMTUnicodeGreekCapitalEnd) {
         // Including capital greek chars
         return [MTMathAtom atomWithType:kMTMathAtomVariable value:chStr];
+    } else if (ch == '\n') {
+        return [MTMathAtom atomWithType:kMTMathAtomSpace value:chStr];
     } else if (ch < 0x21 || ch > 0x7E || ch == '\'' || ch == '~') {
         // not ascii
         return nil;

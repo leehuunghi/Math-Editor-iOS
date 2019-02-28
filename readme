@@ -1,0 +1,12 @@
+ -  Một số cải tiến nổi bậc so với bản example
+	+ Căn bậc 2 của căn bậc 2
+	+ Căn bậc n của căn bậc n
+	+ Cho phép thêm căn thức ở bậc của căn thức
+	+ Luỹ thừa của luỹ thừa
+	+ Thêm PanGesture
+	+ Thêm PinchGesture
+	+ Bỏ các giới hạn về ký hiệu vì logic bắt lỗi về toán còn sai: ví dụ như không cho 	nhập dấu ‘=‘ để biểu diễn phương trình hay lời giải
+	+ Bỏ việc thu nhỏ text để hiển thị của sample thay thế bằng di chuyển màn view để 	caretview luôn nằm giữa màn hình. 
+ - Một số chức năng chưa làm được:
+	+ Di chuyển màn hình Theo caretView khi view hiển thị bị scale do pinchGesture.
+	+ Mở rộng thao tác xoá của sample: ví dụ phân số nếu xoá hết ở mẫu số thì chuyển lên tử số và xoá hết ở tử số thì xoá luôn toán tử phân số. Tương tự cho logarit.

@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/MathEditor/mathEditor/editor/MTEditableMathLabel.m"
-            timestampString = "570182257.726"
+            timestampString = "570686615.353314"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "745"
-            endingLineNumber = "745"
-            landmarkName = "-insertText:"
+            startingLineNumber = "471"
+            endingLineNumber = "471"
+            landmarkName = "-atomForCharacter:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pods/MathEditor/mathEditor/editor/MTEditableMathLabel.m"
-            timestampString = "570182413.241089"
+            timestampString = "570686615.353978"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "556"
-            endingLineNumber = "556"
-            landmarkName = "-handleSubscriptButton"
+            startingLineNumber = "510"
+            endingLineNumber = "510"
+            landmarkName = "-atomForCharacter:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/iosMath/iosMath/lib/MTMathAtomFactory.m"
+            timestampString = "570686615.354236"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "+atomForCharacter:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
